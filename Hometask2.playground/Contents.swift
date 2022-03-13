@@ -166,7 +166,6 @@ func powNumber (_ number: Int, factor: Int = 3) -> Int {
 powNumber(5)
 
 //6*. Функция вычисления факториала числа (рекурсия)
-var factorialResult = 0
 
 func factorialCalculation (number: Int) -> Int {
     if number == 1 {
