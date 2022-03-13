@@ -17,11 +17,13 @@ func powNumber(_ number: Int, factor: Int = 2) -> Int {
 }
 
 //Пройти по элементам изначального массива с помощью цикла for-in, перебирая элементы, и записать в новый массив только четные элементы (не по порядку четные, а с четными Int’ами). (* Написать альтернативный вариант с функцией filter).
+
 var evenNumberArrayFirstVariant: Array<Int>  = []
 var evenNumberArraySecondVariant: Array<Int> = []
 var evenNumberTuplesArray : [(Int, String)]  = []
 
 //The first variant
+
 for (number, _) in tuplesArray {
     if number % 2 == 0 {
         evenNumberArrayFirstVariant.insert(number, at: evenNumberArrayFirstVariant.endIndex)
@@ -31,6 +33,7 @@ for (number, _) in tuplesArray {
 }
 
 //The second variant
+
 for number in 0..<tuplesArray.count {
     if tuplesArray[number].0 % 2 == 0 {
         evenNumberArraySecondVariant.insert(tuplesArray[number].0, at: evenNumberArraySecondVariant.endIndex)
@@ -40,6 +43,7 @@ for number in 0..<tuplesArray.count {
 }
 
 //The first varint with tuples array
+
 for (values, names) in tuplesArray {
     if values % 2 == 0 {
         evenNumberTuplesArray.insert((values, names), at: evenNumberTuplesArray.endIndex)
@@ -47,6 +51,7 @@ for (values, names) in tuplesArray {
 }
 
 //The second variant with tuples array
+
 for values in 0..<tuplesArray.count {
     
 }
