@@ -1,7 +1,7 @@
 import Darwin
 //Создать массив из кортежей (Int, String).
 
-let tuplesArray = [(4, "One"), (8, "Two"), (12, "Three"), (88, "Haha")]
+let tuplesArray = [(1, "My name ist Valdemar"), (3, "Three"), (12, "Elizabeth"), (88, "Hello")]
 var tuplesArrayWithSquaredNumbers : [(Int, String)] = []
 
 //1. Пройти по элементам с помощью цикла for-in, создав Range от 0 до количества элементов массива, и возвести все Int в квадрат. (Лучше создать новый массив и результаты записать туда).
@@ -16,7 +16,7 @@ func powNumber(_ number: Int, factor: Int = 2) -> Int {
     Int(pow(Double(number), Double(factor)))
 }
 
-//Пройти по элементам изначального массива с помощью цикла for-in, перебирая элементы, и записать в новый массив только четные элементы (не по порядку четные, а с четными Int’ами). (* Написать альтернативный вариант с функцией filter).
+//2.Пройти по элементам изначального массива с помощью цикла for-in, перебирая элементы, и записать в новый массив только четные элементы (не по порядку четные, а с четными Int’ами). (* Написать альтернативный вариант с функцией filter).
 
 var evenNumberArrayFirstVariant: Array<Int>  = []
 var evenNumberArraySecondVariant: Array<Int> = []
@@ -53,5 +53,15 @@ for (values, names) in tuplesArray {
 //The second variant with tuples array
 
 for values in 0..<tuplesArray.count {
-    
+    if values % 2 == 0 {
+        evenNumberTuplesArray.insert((values,tuplesArray[values].1), at: evenNumberTuplesArray.endIndex)
+    }
 }
+
+// The variant with filter
+
+var filterArray = tuplesArray.filter {$0.0 % 2 == 0}
+
+//С помощью функции sorted отсортировать изначальный массив по возрастанию строки кортежа.
+
+var temporaryVariable =  tuplesArray.sorted {$0.1.count < $1.1.count}
