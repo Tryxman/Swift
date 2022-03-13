@@ -122,16 +122,14 @@ func divideDigits(_ firstNumber: Double, by secondNumber: Double) -> Double {
 //For this homework , it seems to me that i can use such maning for variables as : theFirstDivide , theFirstMultiply and etc.
 
 //2. Вычислить сумму цифр четырехзначного числа
-var sum = 0
+
 
 func digitsSum(number: Int) -> Int {
     if number > 0 {
-        sum += (number % 10)
-        
-        return digitsSum(number: number / 10)
+        return number % 10 + digitsSum(number: number / 10)
     }
 
-    return sum
+    return 0
 }
 
 var result = digitsSum(number: 9191)
