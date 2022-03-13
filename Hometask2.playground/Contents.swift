@@ -153,9 +153,9 @@ stringCompare("azaz324", with: "azaz")
 
 //4. Циклический вызов функций - поломать приложение
 
-/*func infiniteCycle(_ text: String) {
+func infiniteCycle(_ text: String) {
     return infiniteCycle("Hello")
-} */
+} 
 
 //5. Функция возведения в степень с дефолтным параметром
 
