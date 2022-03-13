@@ -60,4 +60,4 @@ let filterArray = tuplesArray.filter { $0.0 % 2 == 0 }
 
 //С помощью функции sorted отсортировать изначальный массив по возрастанию строки кортежа.
 
-let temporaryVariable =  tuplesArray.sorted { $0.1.count < $1.1.count }
+let temporaryVariable = tuplesArray.sorted { $0.1.count < $1.1.count }
