@@ -28,101 +28,100 @@ func divideTwoValues<T: FloatingPoint>(_ firstNumber: T,  by secondNumber: T) ->
 //The second realization via functions overloading
 //Sum realization via overloading
 
-let theFirstSum: Int     = digitsSum(2, plus: 2)
-let theSecondSum: Double = digitsSum(4, plus: 8)
-let theThirdSum: Int     = digitsSum(5.0, plus: 8.0)
-let theFourthSum: Double = digitsSum(5.5, plus: 5.6)
+let firstSum: Int     = sumDigits(2, plus: 2)
+let secondSum: Double = sumDigits(4, plus: 8)
+let thirdSum: Int     = sumDigits(5.0, plus: 8.0)
+let fourthSum: Double = sumDigits(5.5, plus: 5.6)
 
 
-func digitsSum(_ firstNumber: Int, plus secondNumber: Int) -> Int {
+func sumDigits(_ firstNumber: Int, plus secondNumber: Int) -> Int {
     return firstNumber + secondNumber
 }
 
-func digitsSum(_ number: Double, plus: Double) -> Int {
+func sumDigits(_ number: Double, plus: Double) -> Int {
     return Int(number + plus)
 }
 
-func digitsSum(_ number: Int, plus: Int) -> Double {
+func sumDigits(_ number: Int, plus: Int) -> Double {
     return Double(number + plus)
 }
 
-func digitsSum(_ number: Double, plus: Double) -> Double {
+func sumDigits(_ number: Double, plus: Double) -> Double {
     return number + plus
 }
 
 //Subtraction implementation via overloading
 
-let theFirstSubtraction: Int     = digitsSubtraction(2, minus: 2)
-let theSecondSubtraction: Double = digitsSubtraction(4, minus: 8)
-let theThirdSubtraction: Int     = digitsSubtraction(5.0, minus: 8.0)
-let theFourthSubtraction: Double = digitsSubtraction(5.5, minus: 5.6)
+let firstSubtraction: Int     = subtractDigits(2, minus: 2)
+let secondSubtraction: Double = subtractDigits(4, minus: 8)
+let thirdSubtraction: Int     = subtractDigits(5.0, minus: 8.0)
+let fourthSubtraction: Double = subtractDigits(5.5, minus: 5.6)
 
-func digitsSubtraction(_ firstNumber: Int, minus secondNumber: Int) -> Int {
+func subtractDigits(_ firstNumber: Int, minus secondNumber: Int) -> Int {
     return firstNumber - secondNumber
 }
 
-func digitsSubtraction(_ firstNumber: Double, minus secondNumber: Double) -> Int {
+func subtractDigits(_ firstNumber: Double, minus secondNumber: Double) -> Int {
     return Int(firstNumber - secondNumber)
 }
 
-func digitsSubtraction(_ firstNumber: Int, minus secondNumber: Int) -> Double {
+func subtractDigits(_ firstNumber: Int, minus secondNumber: Int) -> Double {
     return Double(firstNumber - secondNumber)
 }
 
-func digitsSubtraction(_ firstNumber: Double, minus secondNumber: Double) -> Double {
+func subtractDigits(_ firstNumber: Double, minus secondNumber: Double) -> Double {
     return firstNumber - secondNumber
 }
 
 //Multiplication implementation via overloading
 
-let theFirstMultiply: Int     = digitsMultiplication(2, by: 2)
-let theSecondMultiply: Double = digitsMultiplication(4, by: 8)
-let theThirdMultiply: Int     = digitsMultiplication(5.0, by: 8.0)
-let theFourthMultiply: Double = digitsMultiplication(5.5, by: 5.6)
+let firstMultiply: Int     = multiplyDigits(2, by: 2)
+let secondMultiply: Double = multiplyDigits(4, by: 8)
+let thirdMultiply: Int     = multiplyDigits(5.0, by: 8.0)
+let fourthMultiply: Double = multiplyDigits(5.5, by: 5.6)
 
-func digitsMultiplication(_ firstNumber: Int, by secondNumber: Int) -> Int {
+func multiplyDigits(_ firstNumber: Int, by secondNumber: Int) -> Int {
     return firstNumber * secondNumber
 }
 
-func digitsMultiplication(_ firstNumber: Double, by secondNumber: Double) -> Int {
+func multiplyDigits(_ firstNumber: Double, by secondNumber: Double) -> Int {
     return Int(firstNumber * secondNumber)
 }
 
-func digitsMultiplication(_ firstNumber: Int, by secondNumber: Int) -> Double {
+func multiplyDigits(_ firstNumber: Int, by secondNumber: Int) -> Double {
     return Double(firstNumber * secondNumber)
 }
 
-func digitsMultiplication(_ firstNumber: Double, by secondNumber: Double) -> Double {
+func multiplyDigits(_ firstNumber: Double, by secondNumber: Double) -> Double {
     return firstNumber * secondNumber
 }
 
 //Division implementation via overloading
 
-let theFirstDivide: Int     = digitsDivision(2, by: 2)
-let theSecondDivide: Double = digitsDivision(4, by: 8)
-let theThirdDivide: Int     = digitsDivision(5.0, by: 8.0)
-let theFourthDivide: Double = digitsDivision(5.5, by: 5.6)
+let firstDivide: Int     = divideDigits(2, by: 2)
+let secondDivide: Double = divideDigits(4, by: 8)
+let thirdDivide: Int     = divideDigits(5.0, by: 8.0)
+let fourthDivide: Double = divideDigits(5.5, by: 5.6)
 
-func digitsDivision(_ firstNumber: Int, by secondNumber: Int) -> Int {
+func divideDigits(_ firstNumber: Int, by secondNumber: Int) -> Int {
     return firstNumber / secondNumber
 }
 
-func digitsDivision(_ firstNumber: Double, by secondNumber: Double) -> Int {
+func divideDigits(_ firstNumber: Double, by secondNumber: Double) -> Int {
     return Int(firstNumber / secondNumber)
 }
 
-func digitsDivision(_ firstNumber: Int, by secondNumber: Int) -> Double {
+func divideDigits(_ firstNumber: Int, by secondNumber: Int) -> Double {
     return Double(firstNumber / secondNumber)
 }
 
-func digitsDivision(_ firstNumber: Double, by secondNumber: Double) -> Double {
+func divideDigits(_ firstNumber: Double, by secondNumber: Double) -> Double {
     return firstNumber / secondNumber
 }
 
 //For this homework , it seems to me that i can use such maning for variables as : theFirstDivide , theFirstMultiply and etc.
 
 //2. Вычислить сумму цифр четырехзначного числа
-
 var sum = 0
 
 func digitsSum(number: Int) -> Int {
@@ -139,17 +138,11 @@ var result = digitsSum(number: 9191)
 
 //3. Функция сравнения строк
 
-func stringCompare(_ firstString: String, with secondString: String) -> Bool {
-    let stringCompareresult = true
-    
-    if firstString == secondString {
-       return stringCompareresult
-    } else {
-        return !stringCompareresult
-    }
+func compareStrings(_ firstString: String, with secondString: String) -> Bool {
+    return firstString == secondString
 }
 
-stringCompare("azaz324", with: "azaz")
+compareStrings("azaz324", with: "azaz")
 
 //4. Циклический вызов функций - поломать приложение
 
