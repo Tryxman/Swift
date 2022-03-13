@@ -27,6 +27,7 @@ var evenNumberTuplesArray : [(Int, String)]  = []
 for (number, _) in tuplesArray {
     if number % 2 == 0 {
         evenNumberArrayFirstVariant.insert(number, at: evenNumberArrayFirstVariant.endIndex)
+    }
 }
 
 //The second variant
@@ -55,8 +56,8 @@ for values in 0..<tuplesArray.count {
 
 // The variant with filter
 
-var filterArray = tuplesArray.filter {$0.0 % 2 == 0}
+let filterArray = tuplesArray.filter { $0.0 % 2 == 0 }
 
 //С помощью функции sorted отсортировать изначальный массив по возрастанию строки кортежа.
 
-var temporaryVariable =  tuplesArray.sorted {$0.1.count < $1.1.count}
+let temporaryVariable =  tuplesArray.sorted { $0.1.count < $1.1.count }
