@@ -6,10 +6,10 @@ var tuplesArrayWithSquaredNumbers : [(Int, String)] = []
 
 //1. Пройти по элементам с помощью цикла for-in, создав Range от 0 до количества элементов массива, и возвести все Int в квадрат. (Лучше создать новый массив и результаты записать туда).
 
-for range in 0..<tuplesArray.count {
-    let squaring = powNumber(tuplesArray[range].0)
+for index in 0..<tuplesArray.count {
+    let squaring = powNumber(tuplesArray[index].0)
     
-    tuplesArrayWithSquaredNumbers.insert((squaring,tuplesArray[range].1), at: tuplesArrayWithSquaredNumbers.endIndex)
+    tuplesArrayWithSquaredNumbers.insert((squaring, tuplesArray[index].1), at: tuplesArrayWithSquaredNumbers.endIndex)
 }
 
 func powNumber(_ number: Int, factor: Int = 2) -> Int {
@@ -27,9 +27,6 @@ var evenNumberTuplesArray : [(Int, String)]  = []
 for (number, _) in tuplesArray {
     if number % 2 == 0 {
         evenNumberArrayFirstVariant.insert(number, at: evenNumberArrayFirstVariant.endIndex)
-    } else {
-        
-    }
 }
 
 //The second variant
@@ -37,8 +34,6 @@ for (number, _) in tuplesArray {
 for number in 0..<tuplesArray.count {
     if tuplesArray[number].0 % 2 == 0 {
         evenNumberArraySecondVariant.insert(tuplesArray[number].0, at: evenNumberArraySecondVariant.endIndex)
-    } else {
-        
     }
 }
 
@@ -54,7 +49,7 @@ for (values, names) in tuplesArray {
 
 for values in 0..<tuplesArray.count {
     if values % 2 == 0 {
-        evenNumberTuplesArray.insert((values,tuplesArray[values].1), at: evenNumberTuplesArray.endIndex)
+        evenNumberTuplesArray.insert((values, tuplesArray[values].1), at: evenNumberTuplesArray.endIndex)
     }
 }
 
