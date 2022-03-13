@@ -27,7 +27,7 @@ var even = 4
 var arrayOfDigits = [odd,even]
 
 for i in arrayOfDigits {
-    if i%2 != 0  {
+    if i % 2 != 0  {
         print ("\(i) is Odd")
     } else {
         print ("\(i) is Even")
