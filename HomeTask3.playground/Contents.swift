@@ -9,7 +9,7 @@ var tuplesArrayWithSquaredNumbers : [(Int, String)] = []
 for index in 0..<tuplesArray.count {
     let squaring = powNumber(tuplesArray[index].0)
     
-    tuplesArrayWithSquaredNumbers.append((squaring,tuplesArray[index].1))
+    tuplesArrayWithSquaredNumbers.append((squaring, tuplesArray[index].1))
 }
 
 func powNumber(_ number: Int, factor: Int = 2) -> Int {
@@ -34,7 +34,7 @@ for (number, _) in tuplesArray {
 
 for number in 0..<tuplesArray.count {
     if tuplesArray[number].0 % 2 == 0 {
-        evenNumberArraySecondVariant.append(tuplesArray[number].0 )
+        evenNumberArraySecondVariant.append(tuplesArray[number].0)
     }
 }
 
