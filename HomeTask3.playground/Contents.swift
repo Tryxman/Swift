@@ -1,7 +1,7 @@
 import Darwin
 //Создать массив из кортежей (Int, String).
 
-let tuplesArray = [(1, "My name ist Valdemar"), (3, "Three"), (12, "Elizabeth"), (88, "Hello")]
+let tuplesArray = [(2, "My name ist Valdemar"), (3, "Three"), (12, "Elizabeth"), (88, "Hello")]
 var tuplesArrayWithSquaredNumbers : [(Int, String)] = []
 
 //1. Пройти по элементам с помощью цикла for-in, создав Range от 0 до количества элементов массива, и возвести все Int в квадрат. (Лучше создать новый массив и результаты записать туда).
@@ -9,7 +9,7 @@ var tuplesArrayWithSquaredNumbers : [(Int, String)] = []
 for index in 0..<tuplesArray.count {
     let squaring = powNumber(tuplesArray[index].0)
     
-    tuplesArrayWithSquaredNumbers.insert((squaring, tuplesArray[index].1), at: tuplesArrayWithSquaredNumbers.endIndex)
+    tuplesArrayWithSquaredNumbers.append((squaring,tuplesArray[index].1))
 }
 
 func powNumber(_ number: Int, factor: Int = 2) -> Int {
@@ -26,7 +26,7 @@ var evenNumberTuplesArray : [(Int, String)]  = []
 
 for (number, _) in tuplesArray {
     if number % 2 == 0 {
-        evenNumberArrayFirstVariant.insert(number, at: evenNumberArrayFirstVariant.endIndex)
+        evenNumberArrayFirstVariant.append(number)
     }
 }
 
@@ -34,7 +34,7 @@ for (number, _) in tuplesArray {
 
 for number in 0..<tuplesArray.count {
     if tuplesArray[number].0 % 2 == 0 {
-        evenNumberArraySecondVariant.insert(tuplesArray[number].0, at: evenNumberArraySecondVariant.endIndex)
+        evenNumberArraySecondVariant.append(tuplesArray[number].0 )
     }
 }
 
@@ -42,7 +42,7 @@ for number in 0..<tuplesArray.count {
 
 for (values, names) in tuplesArray {
     if values % 2 == 0 {
-        evenNumberTuplesArray.insert((values, names), at: evenNumberTuplesArray.endIndex)
+        evenNumberTuplesArray.append((values, names))
     }
 }
 
@@ -50,7 +50,7 @@ for (values, names) in tuplesArray {
 
 for values in 0..<tuplesArray.count {
     if values % 2 == 0 {
-        evenNumberTuplesArray.insert((values, tuplesArray[values].1), at: evenNumberTuplesArray.endIndex)
+        evenNumberTuplesArray.append((values, tuplesArray[values].1))
     }
 }
 
