@@ -3,8 +3,8 @@
 import Foundation
 
 var worldPlaceDictionary = ["Russia": ("The biggest country in the world", "Eurasia"),
-                            "Portugal": ("One of the most safety country in the world","Europe"),
-                            "Australia": ("The same as Europe but without migrants from near East","Australia"),
+                            "Portugal": ("One of the most safety country in the world", "Europe"),
+                            "Australia": ("The same as Europe but without migrants from near East", "Australia"),
                             "Netherlands": ("Gaaga", "Europe"),
                             "Belarus": ("Misnk is one of the most clean city", "Europe"),
                             "Taiwan": ("The main center of microconductor manufactor", "Asia"),
@@ -23,9 +23,7 @@ worldPlaceDictionary["Netherlands"] = nil // remove value from the Dictionary
 
 //2. Создать отдельный словарь с названием городов/стран с длиной более 6 букв из первоначального словаря.
 
-var dictCitiesLongName = [String: (String, String)] ()
-
-dictCitiesLongName = worldPlaceDictionary.filter({ $0.key.count > 6 })
+let longNameCitiesDictionary = worldPlaceDictionary.filter({ $0.key.count > 6 })
 
 //3.  Создать массив интересных фактов в формате (“название города/страны: факт”) из первоначального словаря, отсортировав их по длине строки по убыванию
 
@@ -33,14 +31,14 @@ var countriesFactsArray = [String]()
 
 for (country, fact) in worldPlaceDictionary {
     countriesFactsArray.append("\(country): \(fact.0)")
-    countriesFactsArray = countriesFactsArray.sorted(by: { $0.count > $1.count })
 }
+countriesFactsArray = countriesFactsArray.sorted(by: { $0.count > $1.count })
 
 countriesFactsArray = worldPlaceDictionary.map { "\($0.key): \($0.value.0) "}.sorted(by: { $0.count > $1.count })
 
 //4.* Отсортировать страны/города по континенту. Отсортированные данные должны лежать в одном объекте (сами придумайте, в каком). В итоге, у вас должна быть возможность получить все страны/города переданному континенту. (Лучше тут сразу функцию реализовать, которая будет возвращать страны по переданному континенту. Чтобы я потом не задавалась, вопросом, как мне потом страны получить из вашего объекта)
 
-var sortedArrayByCountries = [String : [String]] ()
+var sortedArrayByCountries = [String: [String]]()
 
 for key in worldPlaceDictionary {
     sortedArrayByCountries[key.value.1, default: []] += [key.key]
@@ -52,7 +50,7 @@ I found the answer to my question in the lecture, but it's still unclear to me. 
  
 (Желательно использовать map, reduce, filter, sorted)*/
 
-let duplicatedNumbersArray = [1,2,43,5,6,3,5,6,6,3,3]
+let duplicatedNumbersArray = [1, 2, 43, 5, 6, 3, 5, 6, 6, 3, 3]
 var duplicateEditedArray = [Int]()
 
 //the first variant
