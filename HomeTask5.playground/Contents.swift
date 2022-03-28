@@ -51,13 +51,10 @@ func subtractTwoValues<T: Numeric>(_ firstNumber: T?, minus secondNumber: T?) ->
 }
 
 func multiplyTwoValues<T: Numeric>(_ firstNumber: T?, by secondNumber: T?) -> T {
-    if let firstNumber = firstNumber {
-        if let secondNumber = secondNumber {
-            return firstNumber * secondNumber
-        }
-        return 0
+    if let firstNumber = firstNumber, let secondNumber = secondNumber {
+        return firstNumber * secondNumber
     }
-     return 0
+    return 0
 }
 
 // Because of Numeric protocol limitation , for division using -> FloatingPoint
@@ -73,3 +70,13 @@ let symbolsToExlclude   = ["!", " ", ",", ":", "?", "/", "(", ")", "-", "_", "+"
 let reductedString = originalString.lowercased().filter { !symbolsToExlclude.contains(String($0)) }
 
 let isPalindrome = reductedString == String(reductedString.reversed())
+
+
+var elimnetedMethod = [String]()
+var newMethod  = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+
+for i in newMethod {
+    elimnetedMethod.append(i)
+}
+
+print(elimnetedMethod)
