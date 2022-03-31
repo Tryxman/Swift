@@ -10,9 +10,9 @@ let oddNumbersArray  = wholeNumberArray.filter({ $0 % 2 != 0 })
 
 //2. Дан массив опциональных строк. Посчитайте, сколько букв каждая буква встречается во всех словах.
 
-let optionalStringsArray        = ["A", "Ба", "Ба", "Дельфин", nil]
-var duplicatedSymbolsDictionaryIfLet = [String.Element : Int]()
-var duplicatedSymbolsDictionaryGuard = [String.Element : Int]()
+let optionalStringsArray = ["A", "Ба", "Ба", "Дельфин", nil]
+var duplicatedSymbolsDictionaryIfLet = [String.Element: Int]()
+var duplicatedSymbolsDictionaryGuard = [String.Element: Int]()
 for string in optionalStringsArray {
     if let string = string {
         for character in string {
@@ -64,19 +64,9 @@ func divideTwoValues<T: FloatingPoint>(_ firstNumber: T?,  by secondNumber: T?) 
 
 /*4.* Создайте функцию, которая проверяет является ли переданная строка палиндромом. Строка может быть как одним словом (mom) так и предложением (Too bad I hid a boot). В предложении вы должны игнорировать пробелы, большие или маленькие это буквы и знаки препинания при определении полиндрома.*/
 
-let originalString      = ("Mama , : -- , -  a Amam")
-let symbolsToExlclude   = ["!", " ", ",", ":", "?", "/", "(", ")", "-", "_", "+", "="]
+let originalString = "Mama , : -- , -  a Amam"
+let symbolsToExclude = ["!", " ", ",", ":", "?", "/", "(", ")", "-", "_", "+", "="]
 
-let reductedString = originalString.lowercased().filter { !symbolsToExlclude.contains(String($0)) }
+let reductedString = originalString.lowercased().filter { !symbolsToExclude.contains(String($0)) }
 
 let isPalindrome = reductedString == String(reductedString.reversed())
-
-
-var elimnetedMethod = [String]()
-var newMethod  = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
-
-for i in newMethod {
-    elimnetedMethod.append(i)
-}
-
-print(elimnetedMethod)
