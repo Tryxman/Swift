@@ -60,7 +60,6 @@ class Student {
         print(info)
     }
     
-    
 }
 
 enum subject {
