@@ -12,27 +12,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let studentAliaksei = Student(name: "Aliaksei", surname: "Palianskikh", schoolClassNumber: "11-A", subjects: .Math, grade: 9)
-        let studentMariya = Student(name: "Anton", surname: "Bortnik", grade: 10)
-        let studentKostya = Student(name: "Kostya", surname: "Varapai", schoolClassNumber: "11-B", subjects: .Math, grade: 4)
-
-        let school = School(students: [studentAliaksei, studentKostya, studentMariya])
+        let studentAliaksei = Student(name: "Aliaksei", surname: "Palianskikh", schoolClassNumber: "11-A", subjectAndGrade: (.Math, 3))
+        let studentMariya = Student(name: "Anton", surname: "Bortnik")
+        let studentKostya = Student(name: "Kostya", surname: "Varapai", schoolClassNumber: "11-B", subjectAndGrade: (.Math, 9))
+        
+        
+        let school = School(students: [studentKostya, studentAliaksei, studentMariya])
         school.printSchoolInfo()
     }
-
+    
 }
 
 class School {
     var students: [Student]
-
+    
     init(students: [Student]) {
         self.students  = students
     }
-
+    
     func printSchoolInfo() {
         for student in students {
             student.printStudentInfo()
@@ -43,28 +43,30 @@ class School {
 class Student {
     var name: String
     var surname: String
-
+    
     var schoolClassNumber: String
-
-    var subjects: SubjectType
-    var grade: Int
-
-    init(name: String, surname: String, schoolClassNumber: String = "4a", subjects: SubjectType = .Physics, grade: Int) {
+    
+    var subjectAndGrade: (subject, Int)
+    
+    init(name: String, surname: String, schoolClassNumber: String = "4a", subjectAndGrade: (subject, Int) = (.Physics, 10)) {
         self.name = name
         self.surname = surname
         self.schoolClassNumber = schoolClassNumber
-        self.subjects = subjects
-        self.grade = grade
+        self.subjectAndGrade = subjectAndGrade
     }
-
+    
     func printStudentInfo() {
-        let info = " Name: \(name)\n  Surname: \(surname)\n  Class: \(schoolClassNumber)\n  Subject: \(subjects)\n  Grade: \(grade)"
+        let info = " Name: \(name)\n  Surname: \(surname)\n  Class: \(schoolClassNumber)\n  Subject and Grade: \(subjectAndGrade)"
         print(info)
     }
-
-
+    
+    
 }
 
-enum SubjectType {
-    case Math, Physics, Literature, Music, Chemistry
+enum subject {
+    case Math
+    case Physics
+    case Literature
+    case Music
+    case Chemistry
 }
